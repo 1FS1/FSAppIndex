@@ -9,6 +9,8 @@ import {
   Smartphone,
 } from 'lucide-react';
 
+const downloadUrl = (fileName) => `${import.meta.env.BASE_URL}downloads/${fileName}`;
+
 const apps = [
   {
     id: 'portal',
@@ -23,7 +25,15 @@ const apps = [
     name: '設計工具 Windows 版',
     description: '下載 Windows 安裝檔。請將實際 exe 放在 public/downloads。',
     type: 'download',
-    url: '/downloads/your-app.exe',
+    url: downloadUrl('your-app.exe'),
+    meta: 'Windows EXE',
+  },
+  {
+    id: 'app-debug-apk',
+    name: '星杯物語載點',
+    description: '下載 Windows 安裝檔。請將實際 exe 放在 public/downloads。',
+    type: 'download',
+    url: downloadUrl('app-debug.apk'),
     meta: 'Windows EXE',
   },
   {
