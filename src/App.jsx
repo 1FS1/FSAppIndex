@@ -75,7 +75,6 @@ const filters = [
   { value: 'all', label: '全部' },
   { value: 'web', label: '網頁' },
   { value: 'download', label: '下載' },
-  { value: 'download-apk', label: '下載' },
   { value: 'store', label: '商店' },
 ];
 
@@ -132,7 +131,7 @@ export default function App() {
     const keyword = query.trim().toLowerCase();
 
     return apps.filter((app) => {
-      const matchesFilter = filter === 'all' || app.type === filter;
+      const matchesFilter = filter === 'all' || app.type === filter || (filter === 'download' && app.type === 'download-apk');
       const matchesKeyword =
         !keyword ||
         app.name.toLowerCase().includes(keyword) ||
