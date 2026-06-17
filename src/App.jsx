@@ -54,7 +54,7 @@ const apps = [
   // },
   
   {
-    id: 'portal',
+    id: 'starcupstory-web',
     name: '星杯物語網頁版',
     description: '前往網頁版星杯物語',
     type: 'web',
@@ -62,7 +62,7 @@ const apps = [
     meta: 'Web',
   },
   {
-    id: 'app-debug-apk',
+    id: 'starcupstory-apk',
     name: '星杯物語載點',
     description: 'Android APK 載點',
     type: 'download-apk',
