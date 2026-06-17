@@ -117,7 +117,8 @@ h1 {
 
 .segmented-control {
   display: inline-grid;
-  grid-template-columns: repeat(4, minmax(58px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(58px, 1fr));
+  /* grid-template-columns: repeat(5, minmax(58px, 1fr)); */
   gap: 4px;
   padding: 4px;
   background: #e6ecee;
@@ -213,6 +214,11 @@ h2 {
 .badge--download {
   color: #6c4f08;
   background: #fff2c7;
+}
+
+.badge--download-apk {
+  color: #0c94b6;
+  background: #b5dcfc;
 }
 
 .badge--store {

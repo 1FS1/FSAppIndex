@@ -36,14 +36,14 @@ const apps = [
   //   url: downloadUrl('app-debug.apk'),
   //   meta: 'Android APK',
   // },
-  // {
-  //   id: 'mobile-store',
-  //   name: '手機版 APP',
-  //   description: '前往商店頁面安裝行動版應用程式。',
-  //   type: 'store',
-  //   url: 'https://play.google.com/store',
-  //   meta: 'App Store',
-  // },
+  {
+    id: 'mobile-store',
+    name: '手機版 APP',
+    description: '前往商店頁面安裝行動版應用程式。',
+    type: 'store',
+    url: 'https://play.google.com/store',
+    meta: 'App Store',
+  },
   // {
   //   id: 'secure-tool',
   //   name: '資安檢核平台',
@@ -75,11 +75,13 @@ const filters = [
   { value: 'all', label: '全部' },
   { value: 'web', label: '網頁' },
   { value: 'download', label: '下載' },
+  { value: 'download-apk', label: '下載' },
   { value: 'store', label: '商店' },
 ];
 
 function getTypeIcon(type) {
   if (type === 'download') return Download;
+  if (type === 'download-apk') return Download;
   if (type === 'store') return Smartphone;
   return Globe2;
 }
@@ -110,8 +112,8 @@ function AppCard({ app }) {
         <a
           className="action-button"
           href={app.url}
-          target={app.type === 'download' ? undefined : '_blank'}
-          rel={app.type === 'download' ? undefined : 'noreferrer'}
+          target={app.type === 'download' || app.type === 'download-apk' ? undefined : '_blank'}
+          rel={app.type === 'download' || app.type === 'download-apk' ? undefined : 'noreferrer'}
           download={action.download ? true : undefined}
         >
           <ActionIcon size={17} />
