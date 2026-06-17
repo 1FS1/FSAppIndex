@@ -12,45 +12,62 @@ import {
 const downloadUrl = (fileName) => `${import.meta.env.BASE_URL}downloads/${fileName}`;
 
 const apps = [
+  // {
+  //   id: 'portal',
+  //   name: 'FS 入口網站',
+  //   description: '公司內部系統、表單與常用服務入口。',
+  //   type: 'web',
+  //   url: 'https://example.com',
+  //   meta: 'Web',
+  // },
+  // {
+  //   id: 'design-windows',
+  //   name: '設計工具 Windows 版',
+  //   description: '下載 Windows 安裝檔。請將實際 exe 放在 public/downloads。',
+  //   type: 'download',
+  //   url: downloadUrl('your-app.exe'),
+  //   meta: 'Windows EXE',
+  // },
+  // {
+  //   id: 'app-debug-apk',
+  //   name: '星杯物語載點',
+  //   description: '下載 Windows 安裝檔。請將實際 exe 放在 public/downloads。',
+  //   type: 'download',
+  //   url: downloadUrl('app-debug.apk'),
+  //   meta: 'Android APK',
+  // },
+  // {
+  //   id: 'mobile-store',
+  //   name: '手機版 APP',
+  //   description: '前往商店頁面安裝行動版應用程式。',
+  //   type: 'store',
+  //   url: 'https://play.google.com/store',
+  //   meta: 'App Store',
+  // },
+  // {
+  //   id: 'secure-tool',
+  //   name: '資安檢核平台',
+  //   description: '快速開啟資安檢核與申請紀錄。',
+  //   type: 'web',
+  //   url: 'https://example.com/security',
+  //   meta: 'Web',
+  // },
+  
   {
     id: 'portal',
-    name: 'FS 入口網站',
-    description: '公司內部系統、表單與常用服務入口。',
+    name: '星杯物語網頁版',
+    description: '前往網頁版星杯物語',
     type: 'web',
-    url: 'https://example.com',
+    url: 'https://starcupstory-frontend.onrender.com/',
     meta: 'Web',
-  },
-  {
-    id: 'design-windows',
-    name: '設計工具 Windows 版',
-    description: '下載 Windows 安裝檔。請將實際 exe 放在 public/downloads。',
-    type: 'download',
-    url: downloadUrl('your-app.exe'),
-    meta: 'Windows EXE',
   },
   {
     id: 'app-debug-apk',
     name: '星杯物語載點',
-    description: '下載 Windows 安裝檔。請將實際 exe 放在 public/downloads。',
-    type: 'download',
+    description: 'Android APK 載點',
+    type: 'download-apk',
     url: downloadUrl('app-debug.apk'),
-    meta: 'Windows EXE',
-  },
-  {
-    id: 'mobile-store',
-    name: '手機版 APP',
-    description: '前往商店頁面安裝行動版應用程式。',
-    type: 'store',
-    url: 'https://play.google.com/store',
-    meta: 'App Store',
-  },
-  {
-    id: 'secure-tool',
-    name: '資安檢核平台',
-    description: '快速開啟資安檢核與申請紀錄。',
-    type: 'web',
-    url: 'https://example.com/security',
-    meta: 'Web',
+    meta: 'Android APK',
   },
 ];
 
@@ -69,6 +86,7 @@ function getTypeIcon(type) {
 
 function getAction(type) {
   if (type === 'download') return { label: '下載 APP', icon: Download, download: true };
+  if (type === 'download-apk') return { label: '下載 APK', icon: Download, download: true };
   if (type === 'store') return { label: '前往商店', icon: ArrowUpRight };
   return { label: '開啟網頁', icon: ArrowUpRight };
 }
@@ -128,8 +146,8 @@ export default function App() {
       <section className="workspace-header">
         <div>
           <p className="eyebrow">FS Application Index</p>
-          <h1>應用程式與網站入口</h1>
-          <p className="subtitle">集中管理常用系統、外部網站與 APP 下載連結。</p>
+          <h1>FS星星的書籤</h1>
+          <p className="subtitle">集中管理星星FS的常用系統、外部網站與 APP 下載連結。</p>
         </div>
         <div className="status-pill">
           <ShieldCheck size={18} />
