@@ -36,14 +36,14 @@ const apps = [
   //   url: downloadUrl('app-debug.apk'),
   //   meta: 'Android APK',
   // },
-  {
-    id: 'mobile-store',
-    name: '手機版 APP',
-    description: '前往商店頁面安裝行動版應用程式。',
-    type: 'store',
-    url: 'https://play.google.com/store',
-    meta: 'App Store',
-  },
+  // {
+  //   id: 'mobile-store',
+  //   name: '手機版 APP',
+  //   description: '前往商店頁面安裝行動版應用程式。',
+  //   type: 'store',
+  //   url: 'https://play.google.com/store',
+  //   meta: 'App Store',
+  // },
   // {
   //   id: 'secure-tool',
   //   name: '資安檢核平台',
