@@ -63,7 +63,7 @@ const apps = [
   },
   {
     id: 'starcupstory-apk',
-    name: '星杯物語載點',
+    name: '星杯物語 Android 版載點',
     description: 'Android APK 載點',
     type: 'download-apk',
     url: downloadUrl('app-debug.apk'),
